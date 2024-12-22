@@ -82,3 +82,7 @@ The Chord client will handle commands by reading from `stdin` and writing to `st
 - [Tricks and Issues](doc/tricks_issue.md): Some tricks and problems
 
 ## 5. RoadMap
+
+1. The CMD should be seprate from the node.
+2. Use gRPC to replace the RPC.
+3. Provide a GUI for the program.
