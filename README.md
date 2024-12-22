@@ -54,16 +54,16 @@ TLS provides security for communicating with other peers.
 
 The Chord client will handle commands by reading from `stdin` and writing to `stdout`.
 
-1. 'Lookup' takes as input the name of a file to be searcher (e.g., "Hello.txt"). The Chord client takes this string, hashes it to a key in the identifier space, and performs a search for the node that is the successor to the key (i.e., the owner of the key). The Chord client then outputs that node's identifier, IP address, and port.
-2. 'GetFile' takes as input the name of a file to be searcher (e.g., "Hello.txt"). First it will do the Lookup to get the target node, and then it will request the target node to get the file.
-3. 'StoreFile' takes the location of a file on a local disk, then performs a "LookUp". Once the correct place of the file is found, the file gets uploaded to the Chord ring.
-4. 'Storefiles' takes the location of a directory on a local disk, then do StoreFile operation one by one.
-5. 'PrintState' requires no input. The Chord client outputs its local state information at the current time, which consists of:
+1. `Lookup` takes as input the name of a file to be searcher (e.g., "Hello.txt"). The Chord client takes this string, hashes it to a key in the identifier space, and performs a search for the node that is the successor to the key (i.e., the owner of the key). The Chord client then outputs that node's identifier, IP address, and port.
+2. `GetFile` takes as input the name of a file to be searcher (e.g., "Hello.txt"). First it will do the `Lookup` to get the target node, and then it will request the target node to get the file.
+3. `StoreFile` takes the location of a file on a local disk, then performs a "LookUp". Once the correct place of the file is found, the file gets uploaded to the Chord ring.
+4. `Storefiles` takes the location of a directory on a local disk, then do `StoreFile` operation one by one.
+5. `PrintState` requires no input. The Chord client outputs its local state information at the current time, which consists of:
    - The Chord client's own node information
    - The node information for all nodes in the successor list
    - The node information for all nodes in the finger table where "node information" corresponds to the identifier, IP address, and port for a given node.
-6. 'Quit' requires no input. The Chord client quits from the ring.
-7. 'Clear' requires no input. Clear out the screen.
+6. `Quit` requires no input. The Chord client quits from the ring.
+7. `Clear` requires no input. Clear out the screen.
 
 ## 3. Base structure
 
