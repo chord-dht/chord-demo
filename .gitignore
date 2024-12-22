@@ -1,0 +1,11 @@
+.idea/
+
+demoCA/
+
+pack/
+
+test/
+
+*.pem
+*.crt
+*.key
