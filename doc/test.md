@@ -1,12 +1,14 @@
 # Test
 
-## Build and run on local
-
 ```shell
 chmod +x issue.sh
 chmod +x create_pack.sh
 chmod +x run_all.sh
 ```
+
+## Build and run on local
+
+First use the script to create several client:
 
 ```shell
 ./create_pack.sh -n 8
@@ -55,12 +57,18 @@ rm -rf node_*/
 VERBOSE=1 python main.py
 ```
 
-## Pack binary file, crts and key (bonus)
+## Pack binary file with crts and key
 
-Add more flags:
+Now we try more flags:
 
 - `-aes` and `-aeskey`
 - `-tls`, `-cacert`, `-servercert` and `-serverkey`
+
+The instruction is in [TLS Principles](tls.md) and [TLS setup](tls_setup.md).
+
+---
+
+First we need to issue the certificates, then pack them with the binaries.
 
 ```shell
 NUM_CLIENTS=8
@@ -72,6 +80,8 @@ PASSWORD="XXXX"
 # Pack all file into corresponding directory.
 ./create_pack.sh -m -n $NUM_CLIENTS
 ```
+
+An example usage to start a new Chord ring is:
 
 ```shell
 ADDRESS="127.0.0.1"
@@ -120,6 +130,8 @@ VERBOSE=1 ./chord -a $ADDRESS -p $PORT \
 ```
 
 ## Run 8 instances on local using tmux
+
+The instruction is in [Tmux](tmux.md).
 
 ```shell
 ./run_all.sh

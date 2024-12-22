@@ -76,9 +76,6 @@ The Chord client will handle commands by reading from `stdin` and writing to `st
 
 ## 4. Doc
 
-- [TLS Principles](doc/tls.md): How to apply TLS in the project
-- [TLS setup](doc/tls_setup.md): The steps of using TLS
-
 - [Test](doc/test.md): Test on local
 
 - [Successors and backups](doc/successors_backups.md): The replication mechanism in the project
