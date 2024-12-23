@@ -86,7 +86,6 @@ func NewNode(
 	successorsLength int,
 	ipAddress string,
 	port string,
-	identifier *big.Int,
 	storageFactory func(string) (storage.Storage, error),
 	storagePath string,
 	backupPath string,
@@ -99,6 +98,9 @@ func NewNode(
 ) (*Node, error) {
 	// you have to set the identifier length for the tools package first
 	tools.SetIdentifierLength(identifierLength)
+
+	networkAddress := ipAddress + ":" + port
+	identifier := tools.GenerateIdentifier(networkAddress)
 
 	nodeInfo := NodeInfo{
 		Identifier: identifier,

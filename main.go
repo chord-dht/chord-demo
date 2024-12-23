@@ -6,9 +6,7 @@ import (
 	"chord/config"
 	"chord/node"
 	st "chord/storage"
-	"chord/tools"
 	"fmt"
-	"math/big"
 	"time"
 )
 
@@ -46,26 +44,11 @@ func NewNodeWithConfig(
 	storageDir := "storage" // storage directory
 	backupDir := "backup"   // backup directory
 
-	// set up the identifier
-	var identifier *big.Int
-	if cfg.Identifier == config.Unspecified {
-		networkAddress := cfg.IpAddress + ":" + cfg.Port
-		identifier = tools.GenerateHash(networkAddress)
-	} else {
-		var err error
-		identifier, err = tools.HexStringToBigInt(cfg.Identifier) // already checked before
-		if err != nil {
-			return nil, fmt.Errorf("failed to convert string to *big.Int: %w", err)
-		}
-	}
-	identifier = identifier.And(identifier, tools.TwoMMinusOne) // need to mod 2^m anyway
-
 	chordNode, err := node.NewNode(
 		identifierLength,
 		cfg.Successors,
 		cfg.IpAddress,
 		cfg.Port,
-		identifier,
 		storageFactory,
 		storageDir,
 		backupDir,

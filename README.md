@@ -20,13 +20,12 @@ The Chord client will be a command-line utility which takes the following argume
 6. `--tff <Number>` = The time in milliseconds between invocations of 'fix fingers'. Represented as a base-10 integer. Must be specified, with a value in the range of [1,60000].
 7. `--tcp <Number>` = The time in milliseconds between invocations of 'check predecessor'. Represented as a base-10 integer. Must be specified, with a value in the range of [1,60000].
 8. `-r <Number>` = The number of successors maintained by the Chord client. Represented as a base-10 integer. Must be specified, with a value in the range of [1,32].
-9. `-i <String>` = The identifier (ID) assigned to the Chord client which will override the ID computed by the SHA1 sum of the client's IP address and port number. Represented as a string of 40 characters matching [0-9a-fA-F]. Optional parameter.
-10. `-aes` = Whether use AES or not. Optional parameter.
-11. `-aeskey <String>` = The location of the AES key. Optional parameter. Must be specified if `-aes` is specified.
-12. `-tls` = Whether use TLS or not. Optional parameter.
-13. `-cacert` = The CA's certificate. Optional parameter. Must be specified if `-tls` is specified.
-14. `-servercert` = The server's (when peer acts as server) certificate. Optional parameter. Must be specified if `-tls` is specified.
-15. `-serverkey` = The server's (when peer acts as server) private key. Optional parameter. Must be specified if `-tls` is specified.
+9. `-aes` = Whether use AES or not. Optional parameter.
+10. `-aeskey <String>` = The location of the AES key. Optional parameter. Must be specified if `-aes` is specified.
+11. `-tls` = Whether use TLS or not. Optional parameter.
+12. `-cacert` = The CA's certificate. Optional parameter. Must be specified if `-tls` is specified.
+13. `-servercert` = The server's (when peer acts as server) certificate. Optional parameter. Must be specified if `-tls` is specified.
+14. `-serverkey` = The server's (when peer acts as server) private key. Optional parameter. Must be specified if `-tls` is specified.
 
 An example usage to start a new Chord ring is:
 
